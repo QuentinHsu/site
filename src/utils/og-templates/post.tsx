@@ -45,6 +45,17 @@ export default (post: CollectionEntry<'posts'>) => {
           >
             {post.data.title}
           </p>
+          <p
+            lang="zh-CN"
+            style={{
+              fontSize: 50,
+              fontWeight: 'bold',
+              maxHeight: '16%',
+              overflow: 'hidden',
+            }}
+          >
+            {post.data.description}
+          </p>
           <div
             style={{
               display: 'flex',
@@ -68,8 +79,8 @@ export default (post: CollectionEntry<'posts'>) => {
                 {SITE.avatar && (
                   <img
                     style={{
-                      width: '32px',
-                      height: '32px',
+                      width: 45,
+                      height: 45,
                       borderRadius: '50%',
                       marginRight: '8px',
                     }}
@@ -80,9 +91,14 @@ export default (post: CollectionEntry<'posts'>) => {
               </span>
             </span>
 
-            <span style={{ overflow: 'hidden', fontWeight: 'bold' }}>
-              {SITE.title}
-            </span>
+            <div style={{ overflow: 'hidden', fontWeight: 'bold', fontSize: 16, display: 'flex', flexDirection: 'column' }}>
+              <div>
+                {SITE.title}
+              </div>
+              <div>
+                {SITE.website}
+              </div>
+            </div>
           </div>
         </div>
       </div>
