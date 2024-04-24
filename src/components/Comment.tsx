@@ -1,4 +1,4 @@
-//@ts-nocheck
+// @ts-nocheck
 import * as React from 'react'
 import Giscus from '@giscus/react'
 
@@ -14,7 +14,7 @@ function getSystemTheme() {
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 }
 
-const Comments = () => {
+function Comments() {
   const [mounted, setMounted] = React.useState(false)
   const [theme, setTheme] = React.useState('light')
 
@@ -42,22 +42,24 @@ const Comments = () => {
 
   return (
     <div id={id} className="w-full mt-5">
-      {mounted ? (
-        <Giscus
-          id={id}
-          repo="xxx/xxx.com"
-          repoId="R_kgDOKeudTw"
-          category="Announcements"
-          categoryId="DIC_kwDOKeudT84Cch4W"
-          mapping="title"
-          reactionsEnabled="1"
-          emitMetadata="0"
-          inputPosition="top"
-          lang="zh-CN"
-          loading="lazy"
-          theme={theme}
-        />
-      ) : null}
+      {mounted
+        ? (
+          <Giscus
+            id={id}
+            repo="xxx/xxx.com"
+            repoId="R_kgDOKeudTw"
+            category="Announcements"
+            categoryId="DIC_kwDOKeudT84Cch4W"
+            mapping="title"
+            reactionsEnabled="1"
+            emitMetadata="0"
+            inputPosition="top"
+            lang="zh-CN"
+            loading="lazy"
+            theme={theme}
+          />
+          )
+        : null}
     </div>
   )
 }

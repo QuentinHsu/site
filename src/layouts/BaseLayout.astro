@@ -1,18 +1,18 @@
 ---
-import { SITE, OG } from "@config";
+import { OG, SITE } from '@config'
 
 // Component Imports
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
 
-import '../styles/global.css';
+import '../styles/global.css'
 
 interface Props {
-  title?: string;
-  author?: string;
-  description?: string;
-  ogImage?: string;
-  canonicalURL?: string;
+  title?: string
+  author?: string
+  description?: string
+  ogImage?: string
+  canonicalURL?: string
 }
 
 const {
@@ -21,9 +21,9 @@ const {
   description = SITE.description,
   ogImage = OG.ogImage,
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
-} = Astro.props;
+} = Astro.props
 
-const socialImageURL = new URL(ogImage ?? "og.png", Astro.url.origin).href;
+const socialImageURL = new URL(ogImage ?? 'og.png', Astro.url.origin).href;
 ---
 
 <html lang="en">
@@ -65,7 +65,9 @@ const socialImageURL = new URL(ogImage ?? "og.png", Astro.url.origin).href;
     <script is:inline src="/toggle-theme.js"></script>
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH9N740HBE"
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-LH9N740HBE"
     ></script>
     <script>
       // @ts-nocheck

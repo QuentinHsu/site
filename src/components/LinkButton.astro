@@ -1,11 +1,11 @@
 ---
 export interface Props {
-  href: string;
-  className?: string;
-  ariaLabel?: string;
-  title?: string;
-  disabled?: boolean;
-  target?: string;
+  href: string
+  className?: string
+  ariaLabel?: string
+  title?: string
+  disabled?: boolean
+  target?: string
 }
 
 const {
@@ -19,8 +19,8 @@ const {
 ---
 
 <a
-  href={disabled ? "#" : href}
-  tabindex={disabled ? "-1" : "0"}
+  href={disabled ? '#' : href}
+  tabindex={disabled ? '-1' : '0'}
   class={`group inline-block ${className}`}
   aria-label={ariaLabel}
   title={title}

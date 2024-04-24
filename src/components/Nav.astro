@@ -1,19 +1,19 @@
 ---
-import Icon from './Icon.astro';
-import ThemeToggle from './ThemeToggle.astro';
-import type { iconPaths } from './IconPaths';
-import { SITE } from '../config';
+import { SITE } from '../config'
+import Icon from './Icon.astro'
+import ThemeToggle from './ThemeToggle.astro'
+import type { iconPaths } from './IconPaths'
 
 /** Main menu items */
-const textLinks: { label: string; href: string }[] = [
+const textLinks: { label: string, href: string }[] = [
 	{ label: 'Home', href: '/' },
 	{ label: 'Posts', href: '/posts/' },
 	{ label: 'Tags', href: '/tags/' },
 	{ label: 'About', href: '/about/' },
-];
+]
 
 /** Icon links to social media — edit these with links to your profiles! */
-const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[] = [
+const iconLinks: { label: string, href: string, icon: keyof typeof iconPaths }[] = [
 
 	{ label: 'GitHub', href: 'https://github.com/QuentinHsu', icon: 'github-logo' },
 ];
@@ -40,16 +40,16 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 				textLinks.map(({ label, href }) => (
 					<li>
 						<a
-							aria-current={Astro.url.pathname === href}
-							class:list={[
+  aria-current={Astro.url.pathname === href}
+  class:list={[
 								'link',
 								{
 									active:
-										Astro.url.pathname === href ||
-										(href !== '/' && Astro.url.pathname.startsWith(href)),
+										Astro.url.pathname === href
+										|| (href !== '/' && Astro.url.pathname.startsWith(href)),
 								},
 							]}
-							href={href}
+  href={href}
 						>
 							{label}
 						</a>
@@ -78,16 +78,16 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 				textLinks.map(({ label, href }) => (
 					<li>
 						<a
-							aria-current={Astro.url.pathname === href}
-							class:list={[
+  aria-current={Astro.url.pathname === href}
+  class:list={[
 								'link',
 								{
 									active:
-										Astro.url.pathname === href ||
-										(href !== '/' && Astro.url.pathname.startsWith(href)),
+										Astro.url.pathname === href
+										|| (href !== '/' && Astro.url.pathname.startsWith(href)),
 								},
 							]}
-							href={href}
+  href={href}
 						>
 							{label}
 						</a>

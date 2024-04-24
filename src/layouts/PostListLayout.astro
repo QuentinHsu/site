@@ -1,35 +1,35 @@
 ---
-import type { Page } from "astro";
-import type { CollectionEntry } from "astro:content";
-import BaseLayout from './BaseLayout.astro';
-import PostList from '../components/PostList.astro';
-import Hero from '../components/Hero.astro';
-import LinkButton from '../components/LinkButton.astro';
-import { SITE } from "@config";
+import type { Page } from 'astro'
+import type { CollectionEntry } from 'astro:content'
+import { SITE } from '@config'
+import PostList from '../components/PostList.astro'
+import Hero from '../components/Hero.astro'
+import LinkButton from '../components/LinkButton.astro'
+import BaseLayout from './BaseLayout.astro'
 
 interface Props {
-  page: Page<CollectionEntry<"posts">> | undefined;
-  title: string;
-  description?: string;
+  page: Page<CollectionEntry<'posts'>> | undefined
+  title: string
+  description?: string
 }
 
-const { page, title, description } = Astro.props;
+const { page, title, description } = Astro.props
 
-if (!page) {
-  throw new Error("No page data provided");
-}
+if (!page)
+  throw new Error('No page data provided');
+
 ---
 
 
 <BaseLayout
-	title={`title | ${SITE.author}`}
-	description={description}
+  title={`title | ${SITE.author}`}
+  description={description}
 >
 	<div class="stack gap-20">
 		<main class="wrapper stack gap-8 w-full">
 			<Hero
-				title={title}
-				align="center"
+  title={title}
+  align="center"
 			/>
       <PostList posts={page.data} />
       <div class="flex justify-center items-center">
@@ -38,7 +38,7 @@ if (!page) {
             <>
               <LinkButton
                 href={page.url.prev}
-                className={`mr-4 select-none rounded-full border-2 w-8 h-8 flex items-center justify-center dark:border-white fill-gray-100`}
+                className="mr-4 select-none rounded-full border-2 w-8 h-8 flex items-center justify-center dark:border-white fill-gray-100"
                 ariaLabel="Previous"
                 disabled={!page.url.prev}
               >
@@ -57,7 +57,7 @@ if (!page) {
             <>
               <LinkButton
                 href={page.url.next}
-                className={`ml-4 select-none  rounded-full border-2 w-8 h-8 flex items-center justify-center`}
+                className="ml-4 select-none  rounded-full border-2 w-8 h-8 flex items-center justify-center"
                 ariaLabel="Next"
               >
                 <svg

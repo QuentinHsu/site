@@ -1,7 +1,7 @@
 ---
 export interface Props {
-  name: string;
-  count?: number;
+  name: string
+  count?: number
 }
 
 const { name, count } = Astro.props;
@@ -10,7 +10,7 @@ const { name, count } = Astro.props;
 <a
   href={`/tags/${name.toLowerCase()}`}
   transition:name={name.toLowerCase()}
-  class={`text-base pr-4 group`}
+  class="text-base pr-4 group"
 >
   <span>
     <span class="tag">{name.toLowerCase()}{count && count > 0 && `(${count})`}</span>

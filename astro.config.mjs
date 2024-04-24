@@ -1,25 +1,25 @@
-import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
-import react from "@astrojs/react";
-import sitemap from "@astrojs/sitemap";
-import { SITE } from "./src/config";
-import expressiveCode from "astro-expressive-code";
-import mdx from "@astrojs/mdx";
+import { defineConfig } from 'astro/config'
+import tailwind from '@astrojs/tailwind'
+import react from '@astrojs/react'
+import sitemap from '@astrojs/sitemap'
+import expressiveCode from 'astro-expressive-code'
+import mdx from '@astrojs/mdx'
+import { SITE } from './src/config'
 
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
   image: {
-    domains: []
+    domains: [],
   },
   integrations: [
     tailwind(),
     react(),
     sitemap(),
     expressiveCode({
-      themes: ["material-theme-darker"],
+      themes: ['material-theme-darker'],
       plugins: [{
-        name: "custom-style",
+        name: 'custom-style',
         baseStyles: () => `
               .frame.is-terminal:not(.has-title) .header {display: none;}
               .frame .header {border-bottom: 2px solid #313131;}
@@ -37,32 +37,32 @@ export default defineConfig({
                 color: #fff;
               }
               `,
-        hooks: {}
+        hooks: {},
       }],
       useThemedScrollbars: false,
       useThemedSelectionColors: false,
       styleOverrides: {
-        uiLineHeight: "inherit",
-        codeFontSize: "0.875rem",
-        codeLineHeight: "1.25rem",
-        borderRadius: "4px",
-        borderWidth: "0px",
-        codePaddingInline: "1rem",
-        codeFontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;'
-      }
+        uiLineHeight: 'inherit',
+        codeFontSize: '0.875rem',
+        codeLineHeight: '1.25rem',
+        borderRadius: '4px',
+        borderWidth: '0px',
+        codePaddingInline: '1rem',
+        codeFontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;',
+      },
     }),
-    mdx()
+    mdx(),
   ],
   markdown: {
     shikiConfig: {
-      theme: "material-theme-darker",
-      wrap: false
-    }
+      theme: 'material-theme-darker',
+      wrap: false,
+    },
   },
   vite: {
     optimizeDeps: {
-      exclude: ["@resvg/resvg-js"]
-    }
+      exclude: ['@resvg/resvg-js'],
+    },
   },
-  scopedStyleStrategy: "where"
-});
+  scopedStyleStrategy: 'where',
+})

@@ -1,20 +1,20 @@
 ---
-import { SITE } from '@config';
-import Hero from '../../components/Hero.astro';
-import Tag from '../../components/Tag.astro';
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '@config'
+import { getCollection } from 'astro:content'
+import Hero from '../../components/Hero.astro'
+import Tag from '../../components/Tag.astro'
+import BaseLayout from '../../layouts/BaseLayout.astro'
 
-import { getCollection } from "astro:content";
 
 
-const posts = await getCollection("posts");
+const posts = await getCollection('posts')
 const tags: Array<[string, number]> = [
   ...posts
     .filter(article => !article.data.draft)
     .flatMap(article => [...article.data.tags])
     .reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map()),
 ].sort((a, b) => {
-  return b[1] - a[1];
+  return b[1] - a[1]
 });
 
 ---

@@ -2,13 +2,12 @@ import typography from '@tailwindcss/typography'
 
 function withOpacity(variableName) {
   return ({ opacityValue }) => {
-    if (opacityValue !== undefined) {
-      return `rgba(var(${variableName}), ${opacityValue})`;
-    }
-    return `rgb(var(${variableName}))`;
-  };
-}
+    if (opacityValue !== undefined)
+      return `rgba(var(${variableName}), ${opacityValue})`
 
+    return `rgb(var(${variableName}))`
+  }
+}
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -17,7 +16,7 @@ export default {
   theme: {
     extend: {},
     colors: {
-      'gray': {
+      gray: {
         50: 'var(--gray-50)',
         100: 'var(--gray-100)',
         200: 'var(--gray-200)',
@@ -28,9 +27,8 @@ export default {
         700: 'var(--gray-700)',
         800: 'var(--gray-800)',
         900: 'var(--gray-900)',
-      }
-    }
+      },
+    },
   },
   plugins: [typography],
 }
-

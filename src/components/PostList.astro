@@ -1,25 +1,25 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content'
 
 interface Props {
-	posts: CollectionEntry<'posts'>[];
+	posts: CollectionEntry<'posts'>[]
 }
 
-const { posts } = Astro.props;
+const { posts } = Astro.props
 
 function formatDate(date: Date) {
   return new Date(date).toLocaleDateString('zh-CN', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-  });
+  })
 }
 ---
 
 <div class="list-wrapper flex justify-center">
   <div class="list w-full md:w-2/3 lg:w-1/2">
     {
-      posts.map((post) => (
+      posts.map(post => (
         <li>
           <a href={`/posts/${post.slug}`}>
             <h5 class="title">{post.data.title}</h5>

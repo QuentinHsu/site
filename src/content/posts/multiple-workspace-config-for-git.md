@@ -1,5 +1,4 @@
 ---
-
 title: "Git 的多工作区配置"
 description: "Git config 配置 - "
 pubDatetime: 2024-04-23
@@ -18,7 +17,7 @@ tags:
 
 `/Users/<username>/.gitconfig` 文件中写入如下配置内容
 
-```conf
+```
 # GitHub
 
 [includeIf "gitdir:~/Work-Space/Personal/GitHub/"]
@@ -47,7 +46,7 @@ gitdir: 和后续的路径之间，不要自作主张的添加一个空格，否
 
 .gitconfig-github 文件中写入如下配置内容。其文件名不限制，只要你能找得到就行。
 
-```conf
+```
 [user]
 name = <username>
 email = <username>@gmail.com
