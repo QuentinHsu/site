@@ -14,6 +14,13 @@ export async function getStaticPaths() {
 }
 
 export const GET: APIRoute = async ({ props }) =>
-  new Response(await generateOgImageForPost(props as CollectionEntry<"posts">), {
-    headers: { "Content-Type": "image/png" },
-  });
+  {
+    // 当 --mode=production:first 时，GET 需要不执行 generateOgImageForPost()，否则会报错
+    if(import.meta.env.MODE === "production:first") return new Response();
+
+    return new Response(await generateOgImageForPost(props as CollectionEntry<"posts">), {
+      headers: { "Content-Type": "image/png" },
+    });
+  }
+
+
