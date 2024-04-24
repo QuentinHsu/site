@@ -8,7 +8,7 @@ import { getIconCode, loadEmoji } from './twemoji'
 
 const isDev = import.meta.env.MODE === 'development'
 console.log('[ isDev ]-10', isDev)
-const website = isDev ? 'http://localhost:4321/' : SITE.website
+const website = isDev ? 'http://localhost:4322/' : SITE.website
 
 async function fetchFonts() {
   // Regular Font

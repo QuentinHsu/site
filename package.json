@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build:dev": "astro dev & astro build --mode=development",
+    "build:dev": "astro dev --port=4322 & astro build --mode=development && kill-port 4322",
     "build": "astro build",
     "build:first": "astro build --mode=production:first",
     "preview": "astro preview",
@@ -30,6 +30,7 @@
     "eslint": "^9.1.1",
     "eslint-plugin-astro": "^0.34.0",
     "github-slugger": "^2.0.0",
+    "kill-port": "^2.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "satori": "^0.10.13",
