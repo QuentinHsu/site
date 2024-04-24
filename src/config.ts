@@ -6,7 +6,7 @@ import type { OG_Type, Site, SocialObjects } from './types'
 export const SITE: Site = {
   website: 'https://xqy404.com/',
   author: 'QuentinHsu',
-  title: 'QuentinHsu',
+  title: `QuentinHsu's Blog`,
   description: 'Site description goes here',
   tagLine: '人生本就過的不愉快 那就來點羅曼蒂克',
   lightAndDarkMode: true,

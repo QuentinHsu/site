@@ -6,13 +6,14 @@ import postOgImage from './og-templates/post'
 import siteOgImage from './og-templates/site'
 import { getIconCode, loadEmoji } from './twemoji'
 
-const isDev = import.meta.env.DEV
+const isDev = import.meta.env.MODE === 'development'
+console.log('[ isDev ]-10', isDev)
 const website = isDev ? 'http://localhost:4321/' : SITE.website
 
 async function fetchFonts() {
   // Regular Font
   const fontFileRegular = await fetch(
-    `${website}fonts/ZCOOL_KuaiLe/ZCOOLKuaiLe-Regular.ttf`,
+    `${website}fonts/NotoSerifSC/NotoSerifSC-Regular.otf`,
   )
   const fontRegular: ArrayBuffer = await fontFileRegular.arrayBuffer()
 
@@ -27,9 +28,9 @@ const options: SatoriOptions = {
   embedFont: true,
   fonts: [
     {
-      name: 'ZCOOL KuaiLe',
+      name: 'CustomFont-Regular',
       data: fontRegular,
-      weight: 400,
+      weight: 800,
       style: 'normal',
     },
   ],
