@@ -39,7 +39,7 @@ export default (post: CollectionEntry<'posts'>) => {
             style={{
               fontSize: 72,
               fontWeight: 'bold',
-              maxHeight: '84%',
+              maxHeight: '70%',
               overflow: 'hidden',
             }}
           >
@@ -48,9 +48,9 @@ export default (post: CollectionEntry<'posts'>) => {
           <p
             lang="zh-CN"
             style={{
-              fontSize: 50,
+              fontSize: 30,
               fontWeight: 'bold',
-              maxHeight: '16%',
+              maxHeight: '30%',
               overflow: 'hidden',
             }}
           >
