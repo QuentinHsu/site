@@ -6,16 +6,16 @@ import PostListLayout from '../../../layouts/PostListLayout.astro'
 export const getStaticPaths = (async ({ paginate }) => {
   const articles = await getCollection('posts')
 
-  const years = articles.map(article => article.data.pubDatetime.getFullYear())
+  const years = articles.map(article => article.data.createTime.getFullYear())
   const uniqueYears = [...new Set(years)]
 
   return uniqueYears.flatMap((year) => {
     const filteredArticles = articles
-      .filter(article => article.data.pubDatetime.getFullYear() === year)
+      .filter(article => article.data.createTime.getFullYear() === year)
       .sort(
         (a, b) =>
-          Math.floor(new Date(b.data.pubDatetime).getTime() / 1000)
-          - Math.floor(new Date(a.data.pubDatetime).getTime() / 1000),
+          Math.floor(new Date(b.data.createTime).getTime() / 1000)
+          - Math.floor(new Date(a.data.createTime).getTime() / 1000),
       )
       .filter(entry => entry.data.draft !== true)
     return paginate(filteredArticles, {

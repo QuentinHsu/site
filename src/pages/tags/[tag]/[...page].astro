@@ -19,8 +19,8 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
       .filter(article => article.data.tags.includes(tag))
       .sort(
         (a, b) =>
-          Math.floor(new Date(b.data.pubDatetime).getTime() / 1000)
-          - Math.floor(new Date(a.data.pubDatetime).getTime() / 1000),
+          Math.floor(new Date(b.data.createTime).getTime() / 1000)
+          - Math.floor(new Date(a.data.createTime).getTime() / 1000),
       )
     const _tag = tag as string
     return paginate(filteredArticles, {

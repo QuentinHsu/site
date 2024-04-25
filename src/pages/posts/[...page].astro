@@ -14,8 +14,8 @@ export const getStaticPaths = (async ({ paginate }) => {
         .concat()
         .sort(
           (a, b) =>
-            Math.floor(new Date(b.data.pubDatetime).getTime() / 1000)
-            - Math.floor(new Date(a.data.pubDatetime).getTime() / 1000),
+            Math.floor(new Date(b.data.createTime).getTime() / 1000)
+            - Math.floor(new Date(a.data.createTime).getTime() / 1000),
         )
         .filter(entry => entry.data.draft !== true),
       { pageSize: 10 },

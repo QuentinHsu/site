@@ -1,7 +1,7 @@
 ---
 title: "Git 的多工作区配置"
 description: "实现单一系统下按路径设置多份 Git 配置"
-pubDatetime: 2024-04-23
+createTime: 2022-04-19
 tags:
   - git
   - env

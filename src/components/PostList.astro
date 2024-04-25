@@ -24,7 +24,7 @@ function formatDate(date: Date) {
           <a href={`/posts/${post.slug}`}>
             <h5 class="title">{post.data.title}</h5>
             <div class="time">
-              {formatDate(post.data.pubDatetime)}
+              {formatDate(post.data.createTime)}
             </div>
           </a>
         </li>
