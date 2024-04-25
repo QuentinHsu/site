@@ -41,6 +41,8 @@
     "toml",
     "gql",
     "graphql",
-    "astro"
+    "astro",
+    "css",
+    "scss"
   ]
 }
