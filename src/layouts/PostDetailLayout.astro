@@ -4,7 +4,6 @@ import { type CollectionEntry, getCollection } from 'astro:content'
 import { formatDate } from '@utils/format'
 import SVGSignature from '@components/SVGSignature'
 import BaseLayout from '../layouts/BaseLayout.astro'
-import ContactCTA from '../components/ContactCTA.astro'
 import Hero from '../components/Hero.astro'
 import Tag from '../components/Tag.astro'
 // import Comments from "@components/Comment";
@@ -68,13 +67,9 @@ const ogUrl = new URL(ogImageUrl ?? `/posts/${post.slug}.png`, Astro.url.origin)
           <div class="signature" style={{ height: '2em', display: 'flex', flexDirection: 'column', marginTop: '3.7rem' }}>
             <SVGSignature />
           </div>
-          <!-- <Comments client:only="react" /> -->
         </article>
-
 			</main>
-
 		</div>
-		<ContactCTA />
 	</div>
 </BaseLayout>
 
