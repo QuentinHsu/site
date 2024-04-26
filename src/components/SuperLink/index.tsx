@@ -13,10 +13,10 @@ function SuperLink(props: LinkProps) {
     <span className="super-link">
       <a href={url} target="_blank" rel="noopener noreferrer">
         <img
-          className="url-icon"
+          className="url-icon inline-flex m-0"
           src={faviconUrl}
           alt=""
-          style={{ display: 'inline-flex', height: '1em', borderRadius: '25%', margin: 0 }}
+          style={{ height: '1em', borderRadius: '25%' }}
         />
         <span className="title">
           {title}
