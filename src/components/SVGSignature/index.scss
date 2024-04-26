@@ -1,0 +1,40 @@
+.signature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 100px;
+  svg {
+    width: 100%; // SVG 宽度为父元素的 100%
+    height: auto; // 高度自适应
+  }
+  #signature-path {
+    stroke-dasharray: 2400;
+    stroke-dashoffset: 2400;
+    fill: transparent;
+    animation: drawSignature 8s linear infinite;
+    margin-top: 10px;
+  }
+
+  @keyframes drawSignature {
+    0% {
+      stroke-dashoffset: 2400;
+    }
+
+    15% {
+      fill: transparent;
+    }
+
+    35%,
+    75% {
+      stroke-dashoffset: 0;
+      fill: v-bind(logoColor);
+    }
+
+    90%,
+    100% {
+      stroke-dashoffset: 2400;
+      fill: transparent;
+    }
+  }
+}

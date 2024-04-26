@@ -43,6 +43,7 @@
     "graphql",
     "astro",
     "css",
-    "scss"
+    "scss",
+    "sass"
   ]
 }

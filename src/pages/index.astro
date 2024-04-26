@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content'
 
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
+import SVGSignature from '@components/SVGSignature/index'
 import BaseLayout from '../layouts/BaseLayout.astro'
 
 // Component Imports
@@ -33,17 +34,26 @@ function formatDate(date: Date) {
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-  title={`Hello, I'm ${SITE.author}`}
+
   tagline={SITE.tagLine}
   align="start"
 				>
+          <div slot="title">
+            <div class="title-header">
+              Hello, I'm
+            </div>
+            <SVGSignature />
+          </div>
 					<div class="roles">
 						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
 						<Pill><Icon icon="fish" size="1.33em" />Petkeeper</Pill>
 					</div>
 				</Hero>
-        <div class="avatar">
-          <img src="https://avatars.githubusercontent.com/u/21162238?v=4" alt={`${SITE.author}'s avatar`} />
+        <div class="page-image" style={{ display: 'flex', justifyContent: 'center' }}>
+
+          <div class="avatar" style={{ width: '50%', height: '50%' }}>
+            <img src="https://avatars.githubusercontent.com/u/21162238?v=4" alt={`${SITE.author}'s avatar`} style={{ display: 'block' }} />
+          </div>
         </div>
 			</header>
 
@@ -85,28 +95,28 @@ function formatDate(date: Date) {
 	</div>
 </BaseLayout>
 
-<style>
+<style lang="scss">
 	.hero {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		gap: 2rem;
-	}
-
-	.roles {
-		display: none;
-	}
-
-	.hero img {
-    aspect-ratio: 5 / 5;
-		object-fit: cover;
-		object-position: top;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-	}
-  .hero .avatar {
-    width: 150px;
+    img {
+      aspect-ratio: 5 / 5;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-md);
+    }
+    .roles {
+      display: none;
+    }
+    .avatar {
+      width: 150px;
+    }
   }
+
+
 
 	@media (min-width: 50em) {
 		.hero {
@@ -115,7 +125,11 @@ function formatDate(date: Date) {
 			padding-inline: 2.5rem;
 			gap: 3.75rem;
 		}
-
+    .hero {
+      div {
+        margin-bottom: 35px;
+      }
+    }
 		.roles {
 			margin-top: 0.5rem;
 			display: flex;
