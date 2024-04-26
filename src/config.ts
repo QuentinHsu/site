@@ -6,7 +6,7 @@ import type { OG_Type, Site, SocialObjects } from './types'
 export const SITE: Site = {
   website: 'https://xqy404.com/',
   author: 'QuentinHsu',
-  title: `QuentinHsu's Blog`,
+  title: `👨‍💻`,
   description: 'Site description goes here',
   tagLine: '人生本就過的不愉快 那就來點羅曼蒂克',
   lightAndDarkMode: true,
@@ -41,7 +41,4 @@ export const SOCIALS: SocialObjects = [
 
 export const OG: OG_Type = {
   emojiType: 'twemoji',
-  // ogImage: "astropaper-og.jpg",
 }
-
-export const CND_URL: string = 'https://bucket.QuentinHsu.com'
